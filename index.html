@@ -171,6 +171,40 @@
           const form = document.getElementById('popUp').reset()
           modal.style.display = "none";
         });
+
+
+         // N2
+
+      async function setString(stringExmpl) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (stringExmpl.length > 10) {
+              resolve(stringExmpl);
+            } else {
+              reject("This is async function");
+            }
+          }, 5000);
+        });
+      }
+
+      const string = "My name is Mariam!";
+      const string1 = "Mariam";
+
+      setString(string)
+        .then((result) => {
+        console.log("Resolved:", result);
+      })
+      .catch((error) => {
+        console.error("Rejected:", error);
+      });
+
+      setString(string1)
+        .then((result) => {
+        console.log("Resolved:", result);
+      })
+        .catch((error) => {
+        console.error("Rejected:", error);
+      });
         </Script>
 </body>
 </html>
